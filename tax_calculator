@@ -1,0 +1,27 @@
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your salary");
+        float salary = sc.nextFloat();
+        if(salary<250000){
+            float d = ((salary)*0f);
+            System.out.println("Your taxable amount is:" + d + '.');
+            System.out.println("You lie below the tax slab.");
+        }
+        else if(salary>250000 && salary<=500000){
+            float a = ((salary - 250000)*0.05f);
+            System.out.println("Your taxable amount is:" + a + '.');
+        }
+        else if(salary>500000 && salary<=1000000){
+            float b = ((salary - 500000)*0.2f + (250000)*0.05f);
+            System.out.println("Your taxable amount is:" + b + '.');
+        }
+        else if(salary>1000000){
+            float c = ((salary - 1000000)*0.3f + (500000)*0.2f + (250000)*0.05f);
+            System.out.println("Your taxable amount is:" + c + '.' );
+        }
+        else{
+            System.out.println("Enter a valid amount");
+        }
+    }
+}
